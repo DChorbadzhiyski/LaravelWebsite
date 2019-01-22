@@ -11,8 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::resource('/products', 'LeaderboardController');
+Route::get('/', 'LoginController@index');
+Route::post('/checklogin', 'LoginController@checkLogin');
+Route::get('/leaderboard', 'LoginController@successLogin');
+Route::get('/logout', 'LoginController@logout');
